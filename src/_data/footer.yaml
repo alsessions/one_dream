@@ -5,10 +5,8 @@ columns:
     links:
       - label: Home
         url: /
-      - label: About
-        url: /about/
-      - label: Blog
-        url: /blog/
+      - label: Menu
+        url: /menu/
       - label: Contact
         url: /contact/
 
@@ -18,5 +16,3 @@ columns:
 legal:
   - label: Privacy Policy
     url: /privacy/
-  - label: Terms of Service
-    url: /terms/

@@ -113,12 +113,9 @@ We keep your data for as long as necessary, which means:
 
 Questions about privacy? Concerns? Just want to chat?
 
-- **Email:** privacy@example.com
+- **Email:** onedream@gmail.com
 - **Carrier Pigeon:** Not supported (yet)
 - **Telepathy:** Still in beta
 
 ---
 
-*This privacy policy is for a demo starter template. For your actual website, please create a real privacy policy that complies with applicable laws. We recommend consulting with a legal professional who won't find this nearly as amusing as we do.*
-
-**TL;DR:** This is a **demo template** for demonstration purposes only. This starter doesn't actually store, track, sniff, or collect any of your data - it's just static HTML with placeholder text. The source code is available on [GitHub](https://github.com/freshjuice-dev/electric-lime-11ty-starter). Replace this with your real privacy policy before going live!
