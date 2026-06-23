@@ -84,21 +84,40 @@ permalink: /index.html
 
 
 
-{# CTA Section #}
+{# Contact Section #}
 <section class="section bg-primary-700 text-white">
-  <div class="container text-center">
-    <div class="max-w-2xl mx-auto">
-      <h2 class="text-white">Ready to get started?</h2>
-      <p class="mt-4 text-lg text-primary-100 hc:text-white">
-        Clone the repo and start building your next project in minutes.
-      </p>
-      <div class="flex flex-wrap justify-center gap-4 mt-8">
-        {{ button({
-          text: "Get Started",
-          url: "/contact/",
-          variant: "white",
-          size: "lg"
-        }) }}
+  <div class="container">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+      <div>
+        <h2 class="text-white">Visit One Dream</h2>
+        <div class="mt-6 space-y-5 text-lg text-primary-100 hc:text-white">
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wide text-white">Address</h3>
+            <p class="mt-1">
+              9060 State Route 365<br>
+              Stittville, NY 13469
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wide text-white">Phone</h3>
+            <p class="mt-1">
+              <a class="text-primary-100 hover:text-white hc:text-white hc:underline" href="tel:+13158658044">
+                315 865-8044
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overflow-hidden rounded-lg border border-primary-500 bg-white">
+        <iframe
+          class="h-80 w-full md:h-96"
+          title="Map to One Dream"
+          src="https://www.google.com/maps?q=9060%20State%20Route%20365%2C%20Stittville%2C%20NY%2013469&z=13&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </div>
   </div>
