@@ -11,37 +11,25 @@
         <span class="sr-only">{{ metadata.title | default("Electric Lime") }}</span>
       </a>
 
-      {# Desktop Navigation #}
-      <div class="hidden md:flex items-center gap-8">
-        {% for item in header.navigation %}
-          <a
-            href="{{ item.url }}"
-            class="nav-link text-sm font-medium text-zinc-600 hover:text-primary-700 transition-colors no-underline hc:text-zinc-800 hc:hover:text-primary-800 hc:hover:underline{% if page.url == item.url %} text-primary-700 hc:text-primary-800{% endif %}"
-          >
-            {{ item.label }}
-          </a>
-        {% endfor %}
-      </div>
-
-      {# Right side: Search + CTA + Mobile menu #}
+      {# Right side: Navigation + Search + Mobile menu #}
       <div class="flex items-center justify-end gap-3 flex-1">
+        {# Desktop Navigation #}
+        <div class="hidden md:flex items-center gap-8">
+          {% for item in header.navigation %}
+            <a
+              href="{{ item.url }}"
+              class="nav-link text-sm font-medium text-zinc-600 hover:text-primary-700 transition-colors no-underline hc:text-zinc-800 hc:hover:text-primary-800 hc:hover:underline{% if page.url == item.url %} text-primary-700 hc:text-primary-800{% endif %}"
+            >
+              {{ item.label }}
+            </a>
+          {% endfor %}
+        </div>
+
         {# Search icon #}
         {% if header.show_search %}
         <a href="/search/" class="p-2 text-zinc-600 hover:text-primary-700 transition-colors hc:text-zinc-800" aria-label="Search">
           {% phosphor "magnifying-glass", "bold", { size: 20 } %}
         </a>
-        {% endif %}
-
-        {# Desktop CTA #}
-        {% if header.cta %}
-          <div class="hidden md:block">
-            {{ button({
-              text: header.cta.label,
-              url: header.cta.url,
-              variant: "primary",
-              size: "sm"
-            }) }}
-          </div>
         {% endif %}
 
         {# Mobile menu button #}
@@ -76,17 +64,6 @@
           </a>
         {% endfor %}
 
-        {# Mobile CTA #}
-        {% if header.cta %}
-          <div class="px-4 pt-4">
-            {{ button({
-              text: header.cta.label,
-              url: header.cta.url,
-              variant: "primary",
-              full: true
-            }) }}
-          </div>
-        {% endif %}
       </div>
     </div>
   </div>

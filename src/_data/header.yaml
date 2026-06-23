@@ -2,12 +2,13 @@
 navigation:
   - label: Home
     url: /
+  - label: Menu
+    url: /menu/
   - label: About
     url: /about/
 #  - label: Blog
 #    url: /blog/
-  - label: Menu
-    url: /menu/
+
   - label: Contact
     url: /contact/
 
