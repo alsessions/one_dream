@@ -4,7 +4,7 @@ layout: layouts/base.njk
 {% from "_components/index.njk" import button %}
 
 <article class="section">
-  <div class="container max-w-4xl">
+  <div class="{% if fullWidth %}w-full px-4 sm:px-6 lg:px-8{% else %}container max-w-4xl{% endif %}">
     {# Page header #}
     <header class="mb-12 text-center">
       {% if subtitle %}
@@ -23,7 +23,7 @@ layout: layouts/base.njk
     </header>
 
     {# Page content #}
-    <div class="prose prose-lg mx-auto">
+    <div class="{% if fullWidth %}w-full{% else %}prose prose-lg mx-auto{% endif %}">
       {{ content | safe }}
     </div>
   </div>
