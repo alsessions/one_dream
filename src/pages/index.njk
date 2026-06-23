@@ -34,46 +34,52 @@ permalink: /index.html
 </section>
 
 {# Features Section #}
-<section class="section">
+<section class="section bg-gradient-to-b from-white via-sky-50 to-white">
   <div class="container">
-    <div class="text-center max-w-2xl mx-auto mb-12">
-      <h2 class="text-4xl md:text-6xl">One Stop</h2>
-      <p class="mt-4 text-lg text-zinc-600 hc:text-zinc-700">
-        Convenience store, Sunoco gas and a full kitchen.
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <h2 class="text-5xl font-black md:text-7xl">One Stop</h2>
+      <p class="mt-5 text-xl font-semibold leading-relaxed text-zinc-700 hc:text-zinc-800">
+        Fuel up, grab what you need, and bring home something hot from the kitchen. One Dream keeps the essentials simple, fast, and close to home.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {# Feature 1 #}
-      <div class="card">
-        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 hc:bg-primary-200">
-          <span class="text-2xl">🚀</span>
+      <div class="rounded-lg border border-sky-200 bg-white/90 p-8 shadow-sm">
+        <div class="mb-4 flex items-center gap-4">
+          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-700 hc:bg-sky-200">
+            {% phosphor "gas-pump", "duotone", { size: 30 } %}
+          </div>
+          <h3 class="text-3xl font-black text-zinc-950">Sunoco Gas</h3>
         </div>
-        <h3 class="text-xl font-bold mb-2">Sunoco Gas</h3>
-        <p class="text-zinc-600 hc:text-zinc-700">
-          Open 24 hours a day.
+        <p class="text-lg leading-relaxed text-zinc-600 hc:text-zinc-800">
+          Stop in for dependable Sunoco fuel whenever the road calls. The pumps are ready 24 hours a day, whether you are commuting, traveling, or making a late-night run.
         </p>
       </div>
 
       {# Feature 2 #}
-      <div class="card">
-        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 hc:bg-primary-200">
-          <span class="text-2xl">🎨</span>
+      <div class="rounded-lg border border-sky-200 bg-white/90 p-8 shadow-sm">
+        <div class="mb-4 flex items-center gap-4">
+          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-700 hc:bg-sky-200">
+            {% phosphor "shopping-bag-open", "duotone", { size: 30 } %}
+          </div>
+          <h3 class="text-3xl font-black text-zinc-950">Convenience</h3>
         </div>
-        <h3 class="text-xl font-bold mb-2">Convenience</h3>
-        <p class="text-zinc-600 hc:text-zinc-700">
-          Everything you need under one roof.
+        <p class="text-lg leading-relaxed text-zinc-600 hc:text-zinc-800">
+          Pick up drinks, snacks, household basics, and everyday essentials without adding another stop to your day. It is a quick, friendly place to stock up and keep moving.
         </p>
       </div>
 
       {# Feature 3 #}
-      <div class="card">
-        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 hc:bg-primary-200">
-          <span class="text-2xl">⚡</span>
+      <div class="rounded-lg border border-sky-200 bg-white/90 p-8 shadow-sm">
+        <div class="mb-4 flex items-center gap-4">
+          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-700 hc:bg-sky-200">
+            {% phosphor "fork-knife", "duotone", { size: 30 } %}
+          </div>
+          <h3 class="text-3xl font-black text-zinc-950">Full Kitchen</h3>
         </div>
-        <h3 class="text-xl font-bold mb-2">Full Kitchen</h3>
-        <p class="text-zinc-600 hc:text-zinc-700">
-          Deli sandwiches, burgers, pizza and more.
+        <p class="text-lg leading-relaxed text-zinc-600 hc:text-zinc-800">
+          Order from a full menu with deli sandwiches, burgers, wraps, pizza, wings, and more. It is real food made for lunch breaks, family dinners, and everything between.
         </p>
       </div>
 
