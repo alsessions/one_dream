@@ -3,28 +3,33 @@ layout: layouts/base.njk
 ---
 {% from "_components/index.njk" import button %}
 
-<article class="section">
-  <div class="{% if fullWidth %}w-full px-4 sm:px-6 lg:px-8{% else %}container max-w-4xl{% endif %}">
-    {# Page header #}
-    <header class="mb-12 text-center">
+<article>
+  {# Page header #}
+  <header class="relative overflow-hidden bg-cover bg-center py-24 text-center md:py-36" style="background-image: url('/assets/images/one_dream_cover.jpg');">
+    <div class="absolute inset-0 bg-zinc-950/60" aria-hidden="true"></div>
+    <div class="{% if fullWidth %}relative w-full px-4 sm:px-6 lg:px-8{% else %}container relative max-w-4xl{% endif %}">
       {% if subtitle %}
-        <p class="text-sm font-semibold text-primary-600 uppercase tracking-wide mb-2 hc:text-primary-800">
+        <p class="text-sm font-semibold text-primary-100 uppercase tracking-wide mb-2 hc:text-white">
           {{ subtitle }}
         </p>
       {% endif %}
 
-      <h1 class="text-balance">{{ title }}</h1>
+      <h1 class="text-balance text-5xl text-white md:text-6xl">{{ title }}</h1>
 
       {% if description %}
-        <p class="mt-4 text-xl text-zinc-600 text-pretty hc:text-zinc-700">
+        <p class="mt-5 text-2xl text-primary-100 text-pretty hc:text-white">
           {{ description }}
         </p>
       {% endif %}
-    </header>
+    </div>
+  </header>
 
+  <div class="section">
+    <div class="{% if fullWidth %}w-full px-4 sm:px-6 lg:px-8{% else %}container max-w-4xl{% endif %}">
     {# Page content #}
     <div class="{% if fullWidth %}w-full{% else %}prose prose-lg mx-auto{% endif %}">
       {{ content | safe }}
     </div>
+  </div>
   </div>
 </article>
