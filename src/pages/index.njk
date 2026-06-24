@@ -7,7 +7,17 @@ permalink: /index.html
 {% from "_components/index.njk" import button, card, badge, accordion %}
 
 {# Hero Section #}
-<section class="section relative flex min-h-[520px] items-center overflow-hidden bg-cover bg-center md:min-h-[680px]" style="background-image: url('/assets/images/one_dream_cover.jpg');">
+<section class="section relative flex min-h-[520px] items-center overflow-hidden md:min-h-[680px]">
+  <img
+    src="/assets/images/one_dream_cover.jpg"
+    alt=""
+    class="absolute inset-0 h-full w-full object-cover"
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+    sizes="100vw"
+    eleventy:widths="640,960,1200"
+  >
   <div class="absolute inset-0 bg-zinc-950/55" aria-hidden="true"></div>
   <div class="container relative text-center">
     <div class="max-w-4xl mx-auto">

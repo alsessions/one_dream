@@ -6,8 +6,15 @@
       {# Brand column #}
       <div class="md:col-span-1">
         <a href="/" class="inline-flex items-center gap-2 text-xl font-bold text-white hc:text-zinc-900 no-underline hover:text-primary-400">
-          <img src="/assets/images/one_dream_logo.png" alt="{{ metadata.title | default("Electric Lime") }}"
-               width="32" height="32" class="w-8 h-8 object-contain" loading="lazy" eleventy:ignore>
+          <img
+            src="/assets/images/one_dream_logo.png"
+            alt="{{ metadata.title | default("Electric Lime") }}"
+            class="w-8 h-8 object-contain"
+            loading="lazy"
+            decoding="async"
+            sizes="32px"
+            eleventy:widths="32,64"
+          >
           <span>{{ metadata.title | default("Electric Lime") }}</span>
         </a>
 
