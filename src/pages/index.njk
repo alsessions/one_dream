@@ -7,7 +7,7 @@ permalink: /index.html
 {% from "_components/index.njk" import button, card, badge, accordion %}
 
 {# Hero Section #}
-<section class="section relative flex min-h-[520px] items-center overflow-hidden md:min-h-[680px]">
+<section class="home-hero section relative flex min-h-[520px] items-center overflow-hidden md:min-h-[680px]">
   <img
     src="/assets/images/one_dream_cover.jpg"
     alt=""
@@ -19,7 +19,7 @@ permalink: /index.html
     eleventy:widths="640,960,1200"
   >
   <div class="absolute inset-0 bg-zinc-950/55" aria-hidden="true"></div>
-  <div class="container relative text-center">
+  <div class="relative w-full px-6 text-center sm:px-8 lg:px-12">
     <div class="max-w-4xl mx-auto">
      
 
@@ -44,11 +44,11 @@ permalink: /index.html
 </section>
 
 {# Features Section #}
-<section class="section bg-gradient-to-b from-white via-sky-50 to-white">
-  <div class="container">
+<section class="page-content section bg-gradient-to-b from-white via-sky-50 to-white">
+  <div class="w-full px-6 sm:px-8 lg:px-12">
     <div class="text-center max-w-3xl mx-auto mb-14">
-      <h2 class="text-5xl font-black md:text-7xl">One Stop</h2>
-      <p class="mt-5 text-xl font-semibold leading-relaxed text-zinc-700 hc:text-zinc-800">
+      <h2 class="text-5xl font-black md:text-7xl" style="color: #f6b83f !important;">One Stop</h2>
+      <p class="mt-5 text-xl font-semibold leading-relaxed text-zinc-700">
         Fuel up, grab what you need, and bring home something hot from the kitchen. One Dream keeps the essentials simple, fast, and close to home.
       </p>
     </div>
@@ -57,12 +57,12 @@ permalink: /index.html
       {# Feature 1 #}
       <div class="rounded-lg border border-sky-200 bg-white/90 p-8 shadow-sm">
         <div class="mb-4 flex items-center gap-4">
-          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-700 hc:bg-sky-200">
+          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-700">
             {% phosphor "gas-pump", "duotone", { size: 30 } %}
           </div>
-          <h3 class="text-3xl font-black text-zinc-950">Sunoco Gas</h3>
+          <h3 class="text-3xl font-black" style="color: #f6b83f !important;">Sunoco Gas</h3>
         </div>
-        <p class="text-lg leading-relaxed text-zinc-600 hc:text-zinc-800">
+        <p class="text-lg leading-relaxed text-zinc-600">
           Stop in for dependable Sunoco fuel whenever the road calls. The pumps are ready 24 hours a day, whether you are commuting, traveling, or making a late-night run.
         </p>
       </div>
@@ -70,12 +70,12 @@ permalink: /index.html
       {# Feature 2 #}
       <div class="rounded-lg border border-sky-200 bg-white/90 p-8 shadow-sm">
         <div class="mb-4 flex items-center gap-4">
-          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-700 hc:bg-sky-200">
+          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-700">
             {% phosphor "shopping-bag-open", "duotone", { size: 30 } %}
           </div>
-          <h3 class="text-3xl font-black text-zinc-950">Convenience</h3>
+          <h3 class="text-3xl font-black" style="color: #f6b83f !important;">Convenience</h3>
         </div>
-        <p class="text-lg leading-relaxed text-zinc-600 hc:text-zinc-800">
+        <p class="text-lg leading-relaxed text-zinc-600">
           Pick up drinks, snacks, household basics, and everyday essentials without adding another stop to your day. It is a quick, friendly place to stock up and keep moving.
         </p>
       </div>
@@ -83,12 +83,12 @@ permalink: /index.html
       {# Feature 3 #}
       <div class="rounded-lg border border-sky-200 bg-white/90 p-8 shadow-sm">
         <div class="mb-4 flex items-center gap-4">
-          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-700 hc:bg-sky-200">
+          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-700">
             {% phosphor "fork-knife", "duotone", { size: 30 } %}
           </div>
-          <h3 class="text-3xl font-black text-zinc-950">Full Kitchen</h3>
+          <h3 class="text-3xl font-black" style="color: #f6b83f !important;">Full Kitchen</h3>
         </div>
-        <p class="text-lg leading-relaxed text-zinc-600 hc:text-zinc-800">
+        <p class="text-lg leading-relaxed text-zinc-600">
           Order from a full menu with deli sandwiches, burgers, wraps, pizza, wings, and more. It is real food made for lunch breaks, family dinners, and everything between.
         </p>
       </div>
@@ -102,12 +102,12 @@ permalink: /index.html
 
 
 {# Contact Section #}
-<section class="section bg-blue-200 text-zinc-800">
-  <div class="container pb-20">
+<section class="page-content section bg-blue-200 text-zinc-800">
+  <div class="w-full px-6 pb-20 sm:px-8 lg:px-12">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
       <div>
         <h2 class="text-zinc-800">Visit One Dream</h2>
-        <div class="mt-6 space-y-5 text-lg text-zinc-800 hc:text-white">
+        <div class="mt-6 space-y-5 text-lg text-zinc-800">
           <div>
             <h3 class="text-sm font-semibold uppercase tracking-wide text-zinc-800">Address</h3>
             <p class="mt-1">
@@ -119,7 +119,7 @@ permalink: /index.html
           <div>
             <h3 class="text-sm font-semibold uppercase tracking-wide text-zinc-800">Phone</h3>
             <p class="mt-1">
-              <a class="text-zinc-800 hover:text-white hc:text-white hc:underline" href="tel:+13158658044">
+              <a class="text-zinc-800 hover:text-white" href="tel:+13158658044">
                 315 865-8044
               </a>
             </p>

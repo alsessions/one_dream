@@ -42,16 +42,6 @@ Creating custom utilities is now done with `@utility`:
 
 This creates a utility class that behaves just like built-in Tailwind classes.
 
-## Custom Variants
-
-Need a custom variant? Use `@custom-variant`:
-
-```css
-@custom-variant hc (&:where(.high-contrast, .high-contrast *));
-```
-
-Now you can use `hc:text-black` to apply styles only in high contrast mode.
-
 ## Performance Improvements
 
 Tailwind v4 is significantly faster:

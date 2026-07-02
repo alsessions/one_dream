@@ -1,6 +1,6 @@
 /**
  * Electric Lime - Main JavaScript
- * Alpine.js setup with high contrast mode support
+ * Alpine.js setup
  */
 
 import Alpine from "alpinejs";
@@ -8,7 +8,6 @@ import collapse from "@alpinejs/collapse";
 import intersect from "@alpinejs/intersect";
 import "lite-youtube-embed";
 import "@zachleat/table-saw";
-import "./components/contrast-toggle.js";
 
 // Register Alpine plugins
 Alpine.plugin(collapse);

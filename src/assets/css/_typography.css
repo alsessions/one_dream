@@ -73,7 +73,6 @@
     line-height: var(--leading-relaxed);
     color: var(--tw-prose-body);
 
-    @apply hc:text-zinc-900;
 
     /* Headings */
     h1,
@@ -127,7 +126,6 @@
     /* Highlighted text */
     mark {
       @apply bg-primary-200 text-primary-900 px-1 rounded;
-      @apply hc:bg-primary-300;
       font-weight: 500;
     }
 
@@ -139,7 +137,7 @@
     /* Lead paragraph */
     > p:first-of-type {
       font-size: var(--text-lg);
-      @apply text-zinc-600 hc:text-zinc-800;
+      @apply text-zinc-600;
     }
 
     /* Lists */
@@ -178,7 +176,6 @@
       margin: 1.5em 0;
       font-style: italic;
       color: var(--tw-prose-quotes);
-      @apply hc:border-primary-700 hc:text-zinc-800;
 
       p:last-child {
         margin-bottom: 0;
@@ -189,7 +186,6 @@
     :not(pre) > code {
       @apply bg-zinc-100 text-zinc-700 px-1.5 py-0.5 rounded;
       @apply border border-zinc-300;
-      @apply hc:bg-zinc-200;
       font-size: 0.8em;
       font-weight: 500;
       font-family: var(--font-mono);
@@ -236,7 +232,6 @@
       color: var(--tw-prose-captions);
       font-size: var(--text-sm);
       margin-top: 0.75rem;
-      @apply hc:text-zinc-700;
     }
 
     /* Tables */
@@ -248,7 +243,6 @@
 
     th {
       @apply bg-zinc-100 font-semibold text-zinc-900;
-      @apply hc:bg-zinc-200;
       text-align: left;
       padding: 0.75rem 1rem;
       border: 1px solid var(--tw-prose-borders);
@@ -268,7 +262,6 @@
       border: none;
       border-top: 1px solid var(--tw-prose-borders);
       margin: 2em 0;
-      @apply hc:border-zinc-400;
     }
 
     /* Definition list */
@@ -281,7 +274,7 @@
     }
 
     dd {
-      @apply ml-4 text-zinc-600 hc:text-zinc-700;
+      @apply ml-4 text-zinc-600;
     }
 
     /* Abbreviation */
@@ -298,7 +291,7 @@
 
     /* Small text */
     small {
-      @apply text-sm text-zinc-500 hc:text-zinc-700;
+      @apply text-sm text-zinc-500;
     }
   }
 

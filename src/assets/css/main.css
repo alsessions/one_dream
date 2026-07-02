@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-/* High contrast variant - applies when html has .high-contrast class */
-@custom-variant hc (&:where(.high-contrast, .high-contrast *));
-
 /* Scan source files for Tailwind classes */
 @source "../../**/*.{njk,md,html,js}";
 
@@ -52,6 +49,6 @@
 @import "./_forms.css";
 @import "./_typography.css";
 @import "./_utilities.css";
-@import "./_high-contrast.css";
 @import "./_youtube.css";
 @import "./_pagefind.css";
+@import "./_inverse.css";

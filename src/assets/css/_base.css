@@ -70,7 +70,6 @@
   a {
     @apply text-primary-700 transition-colors duration-200;
     @apply hover:text-primary-800;
-    @apply hc:underline;
   }
 
   /* Headings */

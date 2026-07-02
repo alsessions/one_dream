@@ -88,7 +88,7 @@
    - className: additional classes
 ===================================================== #}
 {% macro card(props) %}
-  <article class="group relative flex flex-col bg-white rounded-2xl shadow-sm border border-zinc-200 overflow-hidden hover:shadow-lg hover:border-primary-300 transition-all duration-300 hc:border-zinc-400 {{ props.className | default('') }}">
+  <article class="group relative flex flex-col bg-white rounded-2xl shadow-sm border border-zinc-200 overflow-hidden hover:shadow-lg hover:border-primary-300 transition-all duration-300 {{ props.className | default('') }}">
     {% if props.image %}
       <div class="aspect-video overflow-hidden">
         <img
@@ -103,14 +103,14 @@
 
     <div class="flex flex-col flex-1 p-6">
       {% if props.date %}
-        <div class="text-sm text-zinc-500 mb-2 hc:text-zinc-600">
+        <div class="text-sm text-zinc-500 mb-2">
           <time datetime="{{ props.date | dateToISOString }}">{{ props.date | shortDate }}</time>
         </div>
       {% endif %}
 
       <h3 class="text-lg font-semibold text-zinc-900 mb-2 group-hover:text-primary-700 transition-colors">
         {% if props.url %}
-          <a href="{{ props.url }}" class="no-underline hc:underline">
+          <a href="{{ props.url }}" class="no-underline">
             <span class="absolute inset-0"></span>
             {{ props.title }}
           </a>
@@ -120,7 +120,7 @@
       </h3>
 
       {% if props.description %}
-        <p class="text-zinc-600 line-clamp-3 hc:text-zinc-700">
+        <p class="text-zinc-600 line-clamp-3">
           {{ props.description | truncate(150) }}
         </p>
       {% endif %}
@@ -148,7 +148,7 @@
    - github: GitHub username
 ===================================================== #}
 {% macro authorCard(props) %}
-  <div class="flex items-start gap-4 p-4 bg-zinc-50 rounded-xl hc:bg-zinc-100">
+  <div class="flex items-start gap-4 p-4 bg-zinc-50 rounded-xl">
     {% if props.avatar %}
       <img
         src="{{ props.avatar }}"
@@ -157,8 +157,8 @@
         loading="lazy"
       >
     {% else %}
-      <div class="w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 hc:bg-primary-200">
-        <span class="text-2xl font-bold text-primary-700 hc:text-primary-900">
+      <div class="w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
+        <span class="text-2xl font-bold text-primary-700">
           {{ props.name | first | upper }}
         </span>
       </div>
@@ -167,14 +167,14 @@
     <div class="flex-1 min-w-0">
       <h4 class="font-semibold text-zinc-900">
         {% if props.url %}
-          <a href="{{ props.url }}" class="hover:text-primary-700 hc:underline">{{ props.name }}</a>
+          <a href="{{ props.url }}" class="hover:text-primary-700">{{ props.name }}</a>
         {% else %}
           {{ props.name }}
         {% endif %}
       </h4>
 
       {% if props.bio %}
-        <p class="text-sm text-zinc-600 mt-1 hc:text-zinc-700">{{ props.bio | truncate(120) }}</p>
+        <p class="text-sm text-zinc-600 mt-1">{{ props.bio | truncate(120) }}</p>
       {% endif %}
 
       {% if props.twitter or props.linkedin or props.github %}
@@ -210,7 +210,7 @@
 {% macro accordion(props) %}
   <div x-data="accordion()" class="space-y-3 {{ props.className | default('') }}">
     {% for item in props.items %}
-      <div class="border border-zinc-200 rounded-lg overflow-hidden hc:border-zinc-400">
+      <div class="border border-zinc-200 rounded-lg overflow-hidden">
         <button
           type="button"
           @click="toggle({{ loop.index }})"
@@ -232,7 +232,7 @@
           x-show="isOpen({{ loop.index }})"
           x-cloak
           x-collapse
-          class="text-zinc-600 hc:text-zinc-700"
+          class="text-zinc-600"
         >
             <div class="px-4 pb-4 ">{{ item.answer | safe }}</div>
         </div>

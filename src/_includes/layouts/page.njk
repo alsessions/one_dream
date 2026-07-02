@@ -5,7 +5,7 @@ layout: layouts/base.njk
 
 <article>
   {# Page header #}
-  <header class="relative overflow-hidden py-24 text-center md:py-36">
+  <header class="page-hero relative flex min-h-[360px] items-center overflow-hidden py-20 text-center md:min-h-[420px] md:py-24">
     <img
       src="/assets/images/one_dream_cover.jpg"
       alt=""
@@ -17,9 +17,9 @@ layout: layouts/base.njk
       eleventy:widths="640,960,1200"
     >
     <div class="absolute inset-0 bg-zinc-950/60" aria-hidden="true"></div>
-    <div class="{% if fullWidth %}relative w-full px-4 sm:px-6 lg:px-8{% else %}container relative max-w-4xl{% endif %}">
+    <div class="relative w-full px-6 sm:px-8 lg:px-12">
       {% if subtitle %}
-        <p class="text-sm font-semibold text-primary-100 uppercase tracking-wide mb-2 hc:text-white">
+        <p class="text-sm font-semibold text-primary-100 uppercase tracking-wide mb-2">
           {{ subtitle }}
         </p>
       {% endif %}
@@ -27,17 +27,17 @@ layout: layouts/base.njk
       <h1 class="text-balance text-5xl text-white md:text-6xl">{{ title }}</h1>
 
       {% if description %}
-        <p class="mt-5 text-2xl text-primary-100 text-pretty hc:text-white">
+        <p class="mt-5 text-2xl text-primary-100 text-pretty">
           {{ description }}
         </p>
       {% endif %}
     </div>
   </header>
 
-  <div class="section">
-    <div class="{% if fullWidth %}w-full px-4 sm:px-6 lg:px-8{% else %}container max-w-4xl{% endif %}">
+  <div class="page-content section flex-1">
+    <div class="w-full px-6 sm:px-8 lg:px-12">
     {# Page content #}
-    <div class="{% if fullWidth %}w-full{% else %}prose prose-lg mx-auto{% endif %}">
+    <div class="{% if fullWidth %}w-full{% else %}prose prose-lg max-w-none{% endif %}">
       {{ content | safe }}
     </div>
   </div>

@@ -4,8 +4,8 @@ layout: layouts/base.njk
 {% from "_components/index.njk" import button %}
 
 <section class="section flex-1 flex items-center justify-center">
-  <div class="container text-center">
-    <p class="text-9xl font-bold text-primary-200 hc:text-primary-300">
+  <div class="w-full px-6 text-center sm:px-8 lg:px-12">
+    <p class="text-9xl font-bold text-primary-200">
       {{ errorCode | default("404") }}
     </p>
 
@@ -13,7 +13,7 @@ layout: layouts/base.njk
       {{ title | default("Page Not Found") }}
     </h1>
 
-    <p class="mt-4 text-lg text-zinc-600 max-w-md mx-auto hc:text-zinc-700">
+    <p class="mt-4 text-lg text-zinc-600 max-w-md mx-auto">
       {{ description | default("Sorry, we couldn't find the page you're looking for. It might have been moved or deleted.") }}
     </p>
 

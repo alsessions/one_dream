@@ -1,367 +1,409 @@
 ---
 title: Our Menu
-description: Delicious Food All Day
+description: One Dream Kitchen menu
 fullWidth: true
 templateEngineOverride: njk
 ---
 
-<section class="w-full p-6 font-sans text-zinc-950">
+<style>
+  .menu-board {
+    background: #050505 !important;
+    color: #fff !important;
+  }
+
+  .menu-board,
+  .menu-board * {
+    color: #fff !important;
+  }
+
+  .menu-card {
+    scroll-margin-top: calc(var(--site-header-height, 5rem) + 4.25rem);
+    border: 2px solid #c98532;
+    border-radius: 1.25rem;
+    background: #080808 !important;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    box-shadow: 0 1rem 2.5rem rgb(0 0 0 / 35%);
+  }
+
+  .menu-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 2px solid #c98532;
+    padding-bottom: 0.65rem;
+    margin-bottom: 1rem;
+  }
+
+  .menu-card h2,
+  .menu-card h3,
+  .menu-card h4 {
+    color: #f6b83f !important;
+    text-transform: uppercase;
+  }
+
+  .menu-card h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 950;
+    line-height: 0.9;
+  }
+
+  .menu-card h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    font-weight: 950;
+  }
+
+  .menu-card h4 {
+    font-size: 1.15rem;
+    font-weight: 950;
+  }
+
+  .menu-price,
+  .menu-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #f6b83f;
+    background: #9c27b0 !important;
+    color: #f6b83f !important;
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+    font-weight: 950;
+    line-height: 1;
+    padding: 0.35rem 0.8rem;
+  }
+
+  .menu-tag {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .menu-item {
+    margin-top: 0.85rem;
+  }
+
+  .menu-item h3,
+  .menu-item h4 {
+    color: #fff !important;
+    text-transform: none;
+  }
+
+  .menu-item h3 {
+    font-size: 1.25rem;
+    line-height: 1.1;
+  }
+
+  .menu-item p,
+  .menu-note,
+  .menu-list {
+    font-weight: 700;
+  }
+
+  .menu-note {
+    color: #f7e8be !important;
+  }
+
+  .menu-list {
+    display: grid;
+    gap: 0.15rem 1.5rem;
+  }
+
+  .menu-list.two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .menu-list.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .menu-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    border-bottom: 2px dotted rgb(255 255 255 / 75%);
+    font-size: 1.15rem;
+    font-weight: 950;
+  }
+
+  .menu-line span {
+    background: #080808 !important;
+  }
+
+  .menu-subhead {
+    margin: 1rem 0 0.5rem;
+    border-bottom: 1px solid #c98532;
+    padding-bottom: 0.25rem;
+  }
+
+  .menu-nav {
+    position: sticky;
+    top: var(--site-header-height, 5rem);
+    z-index: 20;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+    border: 1px solid #c98532;
+    border-radius: 1rem;
+    background: rgb(5 5 5 / 92%) !important;
+    backdrop-filter: blur(8px);
+  }
+
+  .menu-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.25rem;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid rgb(201 133 50 / 70%);
+    border-radius: 999px;
+    background: #080808 !important;
+    color: #f6b83f !important;
+    font-size: 0.9rem;
+    font-weight: 900;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .menu-nav a:hover {
+    background: #9c27b0 !important;
+    color: #fff !important;
+  }
+</style>
+
+<section class="menu-board w-full font-sans">
+  <nav class="menu-nav" aria-label="Menu sections">
+    <a href="#burgers">Burgers</a>
+    <a href="#subs">Subs</a>
+    <a href="#tacos">Tacos</a>
+    <a href="#wraps">Wraps</a>
+    <a href="#pizza">Pizza</a>
+    <a href="#quesadillas">Quesadillas</a>
+    <a href="#reuben">Reuben</a>
+    <a href="#paninis">Paninis</a>
+    <a href="#mediterranean-favorites">Mediterranean</a>
+    <a href="#chicken-wings">Wings</a>
+    <a href="#crispy-fish-specials">Fish Specials</a>
+  </nav>
+
   <div class="grid gap-6 lg:grid-cols-2">
     <!-- BURGERS -->
-    <article class="rounded-3xl border-2 border-sky-400 p-5">
-      <div class="mb-4 flex justify-between border-b-2 border-sky-400">
-        <h2 class="text-4xl font-black uppercase text-sky-500">Burgers</h2>
-        <p class="bg-sky-500 px-6 py-1 text-4xl font-black text-white">$11.99</p>
+    <article id="burgers" class="menu-card">
+      <div class="menu-title-row">
+        <h2>Burgers</h2>
+        <p class="menu-price">$11.99</p>
       </div>
-
-      <div class="space-y-3">
-        <div><h3 class="text-xl font-black">Mexican Burger</h3><p class="font-semibold">Beef patty topped with pico de gallo, guacamole, pepper jack cheese, lettuce, tomato, onion, jalapeno. Served with fries.</p></div>
-        <div><h3 class="text-xl font-black">Santa Fe Burger</h3><p class="font-semibold">Beef patty, chipotle sauce, bacon, pepper jack cheese, lettuce, tomato, onion, jalapeno. Served with fries.</p></div>
-        <div><h3 class="text-xl font-black">American Burger</h3><p class="font-semibold">Beef patty, BBQ sauce, American cheese, lettuce, tomato, onion, and pickles. Served with fries.</p></div>
-        <div><h3 class="text-xl font-black">Veggie Burger</h3><p class="font-semibold">Roasted peppers and onions, cilantro, jalapeno, spinach, broccoli, pepper jack cheese. Served with fries.</p></div>
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="menu-item"><h3>Mexican Burger</h3><p>Beef patty topped with pico de gallo, guacamole, pepper jack cheese, lettuce, tomato, onion, jalapeno. Served with fries.</p></div>
+        <div class="menu-item"><h3>Veggie Burger</h3><p>Roasted peppers and onions, cilantro, jalapeno, spinach, broccoli, pepper jack cheese. Served with fries.</p></div>
+        <div class="menu-item"><h3>Santa Fe Burger</h3><p>Beef patty, chipotle sauce, bacon, pepper jack cheese, lettuce, tomato, onion, jalapeno. Served with fries.</p></div>
+        <div class="menu-item"><h3>American Burger</h3><p>Beef patty, BBQ sauce, American cheese, lettuce, tomato, onion, and pickles. Served with fries.</p></div>
       </div>
     </article>
 
-    <!-- REUBEN -->
-    <article class="rounded-3xl border-2 border-sky-400 p-5">
-      <div class="mb-4 flex justify-between border-b-2 border-sky-400">
-        <div class="flex flex-wrap items-end gap-x-3">
-          <h2 class="text-4xl font-black uppercase text-sky-500">Reuben</h2>
-          <p class="pb-1 text-xl font-black uppercase">Served on Rye Bread</p>
+    <!-- SUBS -->
+    <article id="subs" class="menu-card">
+      <div class="menu-title-row">
+        <h2>Subs</h2>
+        <p class="menu-price">$10.99</p>
+      </div>
+      <div class="grid gap-5 md:grid-cols-3">
+        <div>
+          <h3>American Sub</h3>
+          <ul class="menu-list"><li>Italian bread</li><li>Oven-roasted turkey</li><li>Black forest ham</li><li>Bacon</li><li>American cheese</li><li>Lettuce</li><li>Tomatoes</li><li>Red onions</li><li>Mayonnaise</li></ul>
         </div>
-        <p class="bg-sky-500 px-6 py-1 text-4xl font-black text-white">$10.99</p>
+        <div>
+          <h3>Grilled Chicken</h3>
+          <ul class="menu-list"><li>Italian bread</li><li>Grilled chicken</li><li>American cheese</li><li>Lettuce</li><li>Tomatoes</li><li>Red onions</li><li>Green peppers</li><li>Mayonnaise</li></ul>
+        </div>
+        <div>
+          <h3>BLT</h3>
+          <ul class="menu-list"><li>Italian bread</li><li>Bacon</li><li>American cheese</li><li>Lettuce</li><li>Tomatoes</li><li>Mayonnaise</li></ul>
+          <p class="menu-tag mt-4">Meal with Chips and Soda $14.99</p>
+        </div>
       </div>
+    </article>
 
-      <p class="mb-4 font-bold">Served with fries</p>
-      <div class="space-y-3">
-        <div><h3 class="text-xl font-black">Corned Beef Reuben</h3><p class="font-semibold">Corned beef, Swiss cheese, sauerkraut, Russian dressing</p></div>
-        <div><h3 class="text-xl font-black">Pastrami Reuben</h3><p class="font-semibold">Pastrami, Swiss cheese, sauerkraut, deli mustard</p></div>
-        <div><h3 class="text-xl font-black">Turkey Reuben</h3><p class="font-semibold">Turkey, Swiss cheese, sauerkraut, roasted peppers and onions, deli mustard</p></div>
-        <div><h3 class="text-xl font-black">Veggie Melt Reuben</h3><p class="font-semibold">Pepper jack cheese, sauerkraut, roasted peppers and onions, broccoli, spicy mayo</p></div>
+    <!-- TACOS -->
+    <article id="tacos" class="menu-card">
+      <div class="menu-title-row">
+        <div>
+          <h2>Tacos</h2>
+          <p class="menu-note font-black">Chipotle Style Chicken Tacos</p>
+        </div>
       </div>
+      <p class="menu-tag mb-4">3 Tacos - $11.99</p>
+      <h3>Toppings</h3>
+      <ul class="menu-list two">
+        <li>Lettuce</li><li>Pickle</li><li>Onions</li><li>Jalapeno</li><li>Cucumber</li><li>Fresh Lime</li><li>Tomatoes</li><li>Guacamole</li><li>Bell Peppers</li><li>Sour Cream</li>
+      </ul>
     </article>
 
     <!-- WRAPS -->
-    <article class="rounded-3xl border-2 border-sky-400 p-5">
-      <div class="mb-4 flex justify-between border-b-2 border-sky-400">
-        <div class="flex flex-wrap items-end gap-x-3">
-          <h2 class="text-4xl font-black uppercase text-sky-500">Wraps</h2>
-          <p class="pb-1 font-black">Served with fries</p>
-        </div>
-        <p class="bg-sky-500 px-6 py-1 text-4xl font-black text-white">$10.99</p>
+    <article id="wraps" class="menu-card">
+      <div class="menu-title-row">
+        <h2>Wraps</h2>
+        <p class="menu-price">$10.99</p>
       </div>
-
       <div class="grid gap-4 sm:grid-cols-2">
-        <div><h3 class="text-xl font-black">Napa Valley Wrap</h3><p class="font-semibold">Grilled chicken, lettuce, avocado, roasted red peppers, tomato, and ranch</p></div>
-        <div><h3 class="text-xl font-black">Grilled Chicken Wrap</h3><p class="font-semibold">Grilled chicken, lettuce, tomato, mozzarella cheese, and aioli dressing</p></div>
-        <div><h3 class="text-xl font-black">Chicken Tikka Masala Wrap</h3><p class="font-semibold">Chicken tikka masala, American cheese, mayo, lettuce, tomato</p></div>
-        <div><h3 class="text-xl font-black">Crispy Chicken Wrap</h3><p class="font-semibold">Crispy chicken, pesto mayo, lettuce, tomato</p></div>
-        <div><h3 class="text-xl font-black">Turkey Avocado Wrap</h3><p class="font-semibold">Turkey, lettuce, tomato, avocado, and mayo</p></div>
-        <div><h3 class="text-xl font-black">Tuna Wrap</h3><p class="font-semibold">Tuna salad, lettuce, tomato, roasted red peppers, American cheese</p></div>
-      </div>
-    </article>
-
-    <!-- QUESADILLAS -->
-    <article class="rounded-3xl border-2 border-sky-400 p-5">
-      <div class="mb-4 flex justify-between border-b-2 border-sky-400">
-        <div class="flex flex-wrap items-end gap-x-3">
-          <h2 class="text-4xl font-black uppercase text-sky-500">Quesadillas</h2>
-          <p class="pb-1 font-black">Served with fries</p>
-        </div>
-        <p class="bg-sky-500 px-6 py-1 text-4xl font-black text-white">$11.99</p>
-      </div>
-
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div><h3 class="text-xl font-black">Grilled Chicken Quesadilla</h3><p class="font-semibold">Grilled chicken, shredded cheese, roasted peppers, and onions</p></div>
-        <div><h3 class="text-xl font-black">Corn Bread Quesadilla</h3><p class="font-semibold">Corned beef, roasted peppers and onions, shredded cheese</p></div>
-        <div><h3 class="text-xl font-black">Philly Cheesesteak Quesadilla</h3><p class="font-semibold">Philly cheese steak, roasted peppers and onions, shredded cheese</p></div>
-        <div><h3 class="text-xl font-black">Crispy Chicken Quesadilla</h3><p class="font-semibold">Crispy chicken, roasted green peppers, onions, shredded cheese</p></div>
-        <div><h3 class="text-xl font-black">Veggie Quesadilla</h3><p class="font-semibold">Roasted peppers and onions, broccoli, pico de gallo, jalapenos, pepper jack cheese, and chipotle sauce</p></div>
-      </div>
-    </article>
-
-    <!-- CHICKEN WINGS -->
-    <article class="rounded-3xl border-2 border-sky-400 p-5">
-      <h2 class="mb-4 border-b-2 border-sky-400 text-4xl font-black uppercase text-sky-500">Chicken Wings</h2>
-
-      <div class="mb-5 space-y-3 text-xl font-black">
-        <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>5 Chicken Wings</span><span>$7.99</span></p>
-        <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>15 Chicken Wings</span><span>$20.99</span></p>
-        <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>25 Chicken Wings</span><span>$31.99</span></p>
-        <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>40 Chicken Wings</span><span>$44.99</span></p>
-      </div>
-
-      <div class="rounded-xl border border-sky-300 p-4">
-        <h3 class="mb-2 text-2xl font-black uppercase text-sky-500">Flavors</h3>
-        <p class="font-semibold">Garlic Parmesan, Honey Gold, Lemon Pepper Mild, Buffalo, Hot, Mango Habanero, Asian Zing</p>
+        <div class="menu-item"><h3>Napa Valley Wrap</h3><p>Grilled chicken, lettuce, avocado, roasted red peppers, tomato, and ranch</p></div>
+        <div class="menu-item"><h3>Grilled Chicken Wrap</h3><p>Grilled chicken, lettuce, tomato, mozzarella cheese, and aioli dressing</p></div>
+        <div class="menu-item"><h3>Chicken Tikka Masala</h3><p>Chicken tikka masala, American cheese, mayo, lettuce, tomato</p></div>
+        <div class="menu-item"><h3>Tuna Wrap</h3><p>Tuna salad, lettuce, tomato, roasted red peppers, American cheese</p></div>
+        <div class="menu-item"><h3>Turkey Avocado Wrap</h3><p>Turkey, lettuce, tomato, avocado, and mayo</p></div>
+        <div class="menu-item"><h3>Crispy Chicken Wrap</h3><p>Crispy chicken, pesto mayo, lettuce, tomato</p></div>
       </div>
     </article>
 
     <!-- PIZZA -->
-    <article class="rounded-3xl border-2 border-sky-400 p-5">
-      <div class="mb-4 border-b-2 border-sky-400 text-center">
-        <h2 class="text-4xl font-black uppercase text-sky-500">Pizza</h2>
-        <p class="font-bold">Fresh Pizza Made Your Way</p>
-      </div>
-
-      <div class="mb-6 grid gap-6 sm:grid-cols-2">
+    <article id="pizza" class="menu-card">
+      <div class="menu-title-row">
         <div>
-          <h3 class="mb-3 text-2xl font-black uppercase text-sky-500">Personal Size 10"</h3>
-          <p class="mb-3 text-xl font-black">Buy 4, Get 1 Free!</p>
-          <div class="space-y-2 font-black">
-            <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Cheese Pizza</span><span>$7.99</span></p>
-            <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Veggie Pizza</span><span>$7.99</span></p>
-            <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Pepperoni Pizza</span><span>$8.99</span></p>
-            <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Chicken Pizza</span><span>$8.99</span></p>
-            <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Chipotle Chicken</span><span>$8.99</span></p>
-            <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Steak Pizza</span><span>$8.99</span></p>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="mb-3 text-2xl font-black uppercase text-sky-500">Personal Size Large 18"</h3>
-          <div class="space-y-2 font-black">
-            <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Cheese Pizza</span><span>$19.99</span></p>
-            <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Veggie Pizza</span><span>$19.99</span></p>
-            <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Pepperoni Pizza</span><span>$20.99</span></p>
-            <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Chicken Pizza</span><span>$20.99</span></p>
-            <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Chipotle Buffalo</span><span>$20.99</span></p>
-            <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Steak Pizza</span><span>$20.99</span></p>
-          </div>
+          <h2>Pizza</h2>
+          <p class="menu-note">Fresh Pizza Made Your Way</p>
         </div>
       </div>
-
-      <p class="mb-5 text-center font-black">Free 2 Liter Soda with Purchase of 18 Inch Pizza</p>
-
-      <div class="grid gap-6 sm:grid-cols-2">
+      <h3>Personal Size 10" <span class="menu-note">Buy 4, Get 1 Free!</span></h3>
+      <div class="space-y-2">
+        <p class="menu-line"><span>Cheese Pizza</span><span>$7.99</span></p>
+        <p class="menu-line"><span>Veggie Pizza</span><span>$7.99</span></p>
+        <p class="menu-line"><span>Pepperoni</span><span>$8.99</span></p>
+        <p class="menu-line"><span>Chicken Pizza</span><span>$8.99</span></p>
+        <p class="menu-line"><span>Chipotle Buffalo</span><span>$8.99</span></p>
+        <p class="menu-line"><span>Philly Steak Pizza</span><span>$8.99</span></p>
+      </div>
+      <h3 class="menu-subhead">Personal Size Large 18"</h3>
+      <div class="space-y-2">
+        <p class="menu-line"><span>Cheese Pizza</span><span>$19.99</span></p>
+        <p class="menu-line"><span>Veggie Pizza</span><span>$19.99</span></p>
+        <p class="menu-line"><span>Pepperoni Pizza</span><span>$20.99</span></p>
+        <p class="menu-line"><span>Chicken Pizza</span><span>$20.99</span></p>
+        <p class="menu-line"><span>Chipotle Buffalo</span><span>$20.99</span></p>
+        <p class="menu-line"><span>Philly Steak Pizza</span><span>$20.99</span></p>
+      </div>
+      <p class="mt-3 font-black">Free 2 Liter Soda with Purchase of 18 Inch Pizza</p>
+      <div class="mt-4 grid gap-5 sm:grid-cols-2">
         <div>
-          <h3 class="mb-2 text-2xl font-black uppercase text-sky-500">Choice of Meat</h3>
-          <ul class="grid grid-cols-2 gap-x-5 font-semibold">
-            <li>• Bacon</li><li>• Grilled Chicken Breast</li>
-            <li>• Philly Steak</li><li>• Pepperoni</li>
+          <h3>Toppings</h3>
+          <ul class="menu-list two">
+            <li>Tomato</li><li>Onions</li><li>Jalapenos</li><li>Pickles</li><li>Mushrooms</li><li>Banana Peppers</li><li>Roasted Sweet Onions</li><li>Green Peppers</li><li>Roasted Red Peppers</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Choice of Meat</h3>
+          <ul class="menu-list two">
+            <li>Bacon</li><li>Grilled Chicken Breast</li><li>Philly Steak</li><li>Pepperoni</li>
           </ul>
           <p class="mt-2 font-black">Extra Meat $2.99 each</p>
         </div>
+      </div>
+    </article>
 
+    <!-- QUESADILLAS -->
+    <article id="quesadillas" class="menu-card">
+      <div class="menu-title-row">
+        <h2>Quesadillas</h2>
+        <p class="menu-price">$11.99</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="menu-item"><h3>Grilled Chicken Quesadilla</h3><p>Grilled chicken, shredded cheese, roasted peppers, and onions</p></div>
+        <div class="menu-item"><h3>Corn Bread Quesadilla</h3><p>Corned beef, roasted pepper and onions, shredded cheese</p></div>
+        <div class="menu-item"><h3>Philly Cheesesteak</h3><p>Philly cheese steak, roasted peppers and onions, shredded cheese</p></div>
+        <div class="menu-item"><h3>Crispy Chicken</h3><p>Crispy chicken, roasted green peppers, onions, shredded cheese</p></div>
+        <div class="menu-item"><h3>Veggie Quesadilla</h3><p>Roasted peppers and onions, broccoli, pico de gallo, jalapenos, pepper jack cheese, and chipotle sauce</p></div>
+      </div>
+    </article>
+
+    <!-- REUBEN -->
+    <article id="reuben" class="menu-card">
+      <div class="menu-title-row">
         <div>
-          <h3 class="mb-2 text-2xl font-black uppercase text-sky-500">Toppings</h3>
-          <ul class="grid grid-cols-2 gap-x-5 font-semibold">
-            <li>• Tomato</li><li>• Pickles</li>
-            <li>• Onions</li><li>• Banana Peppers</li>
-            <li>• Jalapenos</li><li>• Mushrooms</li>
-            <li>• Roasted Sweet Onions</li><li>• Green Peppers</li>
-            <li>• Roasted Red Peppers</li>
+          <h2>Reuben</h2>
+          <p class="menu-note uppercase font-black">Served on Rye Bread</p>
+        </div>
+        <p class="menu-price">$10.99</p>
+      </div>
+      <p class="menu-note font-black">Served with fries</p>
+      <div class="space-y-3">
+        <div class="menu-item"><h3>Corned Beef Reuben</h3><p>Corned beef, Swiss cheese, sauerkraut, Russian dressing</p></div>
+        <div class="menu-item"><h3>Pastrami Reuben</h3><p>Pastrami, Swiss cheese, sauerkraut, deli mustard</p></div>
+        <div class="menu-item"><h3>Turkey Reuben</h3><p>Turkey, Swiss cheese, sauerkraut, roasted peppers and onions, deli mustard</p></div>
+      </div>
+    </article>
+
+    <!-- PANINIS -->
+    <article id="paninis" class="menu-card">
+      <div class="menu-title-row">
+        <h2>Paninis</h2>
+        <p class="menu-price">$11.99</p>
+      </div>
+      <div class="space-y-3">
+        <div class="menu-item"><h3>Turkey Bacon Guacamole</h3><p>Turkey, bacon, guacamole, pepper jack cheese and ranch</p></div>
+        <div class="menu-item"><h3>Tuna Melt</h3><p>Tuna salad, roasted red peppers and American cheese</p></div>
+        <div class="menu-item"><h3>Cabana</h3><p>Turkey, ham, Swiss, pickles and Russian</p></div>
+        <div class="menu-item"><h3>Buffalo Chicken</h3><p>Grilled chicken, bacon, cheddar cheese, lettuce, tomato and ranch</p></div>
+        <div class="menu-item"><h3>Veggie Melt</h3><p>Roasted peppers and onions, cilantro, jalapeno, spinach, broccoli, pepper jack cheese and chipotle</p></div>
+        <div class="menu-item"><h3>Spicy Pepperoni</h3><p>Pepperoni, pepper jack cheese, pickles, jalapeno and chipotle sauce</p></div>
+        <div class="menu-item"><h3>Philly Cheese Steak</h3><p>Sliced steak, American cheese, roasted peppers and onions, roasted red peppers and mayo</p></div>
+      </div>
+    </article>
+
+    <!-- MEDITERRANEAN FAVORITES -->
+    <article id="mediterranean-favorites" class="menu-card">
+      <div class="menu-title-row">
+        <h2>Mediterranean Favorites <span class="menu-note">(Halal)</span></h2>
+      </div>
+      <div class="space-y-2">
+        <p class="menu-line"><span>Chicken Over Rice</span><span>$11.99</span></p>
+        <p class="menu-line"><span>Lamb Over Rice</span><span>$11.99</span></p>
+        <p class="menu-line"><span>Combo Mix Over Rice</span><span>$11.99</span></p>
+        <p class="menu-line"><span>Chicken/Lamb Gyro</span><span>$11.99</span></p>
+      </div>
+      <p class="mt-2 font-black">Wrapped in Pita Bread</p>
+      <p class="mb-4 font-black">Extra Meat $2.99 | Pita $0.99</p>
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <h3>Salads Included</h3>
+          <ul class="menu-list two">
+            <li>Lettuce</li><li>Pickle</li><li>Tomato</li><li>Jalapeno</li><li>Onion</li><li>Guacamole</li><li>Cucumber</li><li>Bell Peppers</li><li>Cilantro Mix</li>
           </ul>
         </div>
+        <div>
+          <h3>Sauces <span class="menu-note text-sm normal-case">All sauces homemade</span></h3>
+          <ul class="menu-list">
+            <li>White Dill Sauce</li>
+            <li>Buffalo Chipotle Mayo</li>
+            <li>Mint and Cilantro Mix</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- CHICKEN WINGS -->
+    <article id="chicken-wings" class="menu-card">
+      <h2 class="border-b-2 pb-3" style="border-color: #c98532;">Chicken Wings</h2>
+      <div class="mt-4 space-y-3">
+        <p class="menu-line"><span>5 Chicken Wings</span><span>$7.99</span></p>
+        <p class="menu-line"><span>15 Chicken Wings</span><span>$20.99</span></p>
+        <p class="menu-line"><span>25 Chicken Wings</span><span>$31.99</span></p>
+        <p class="menu-line"><span>40 Chicken Wings</span><span>$44.99</span></p>
+      </div>
+      <div class="mt-5 rounded-xl p-4" style="border: 1px solid #c98532;">
+        <h3>Flavors</h3>
+        <p class="font-semibold">Garlic Parmesan, Honey Gold, Lemon Pepper, Mild, Buffalo, Hot, Mango Habanero, Asian Zing</p>
       </div>
     </article>
 
     <!-- CRISPY FISH SPECIALS -->
-    <article class="rounded-3xl border-2 border-sky-400 p-5">
-      <h2 class="mb-4 border-b-2 border-sky-400 text-4xl font-black uppercase text-sky-500">Crispy Fish Specials</h2>
-
-      <div class="space-y-3 text-xl font-black">
-        <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Crispy Fish &amp; Chips</span><span>$8.99</span></p>
-        <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Crispy Fish Sandwich</span><span>$8.99</span></p>
-        <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Crispy Fish Quesadilla</span><span>$8.99</span></p>
-        <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500"><span>Crispy Fish Panini (Half)</span><span>$6.99</span></p>
+    <article id="crispy-fish-specials" class="menu-card">
+      <h2 class="border-b-2 pb-3" style="border-color: #c98532;">Crispy Fish Specials</h2>
+      <div class="mt-4 space-y-3">
+        <p class="menu-line"><span>Crispy Fish and Chips</span><span>$8.99</span></p>
+        <p class="menu-line"><span>Crispy Fish Sandwich</span><span>$8.99</span></p>
+        <p class="menu-line"><span>Crispy Fish Quesadilla</span><span>$8.99</span></p>
       </div>
     </article>
 
-    <!-- DELI SANDWICH -->
-    <article class="rounded-3xl border-2 border-sky-400 p-5">
-      <div class="mb-4 flex justify-between border-b-2 border-sky-400">
-        <h2 class="text-4xl font-black uppercase text-sky-500">Deli Sandwich</h2>
-        <p class="bg-sky-500 px-6 py-1 text-4xl font-black text-white">$8.99</p>
-      </div>
-
-      <h3 class="mb-5 text-xl font-black">Build Your Own Deli Sandwich</h3>
-
-      <div class="mb-6">
-        <h4 class="mb-2 text-2xl font-black uppercase text-sky-500">Choice of Bread</h4>
-        <ul class="grid grid-cols-3 gap-x-6 text-lg font-semibold">
-          <li>• White</li><li>• Panini</li><li>• Multi-Grain</li>
-          <li>• Wheat</li><li>• Wrap</li><li>• White Italian Hero</li>
-          <li>• Rye</li><li>• Croissant</li><li>• Focaccia</li>
-          <li class="col-span-3">• Bagel (Plain, Everything, or Sesame)</li>
-        </ul>
-      </div>
-
-      <div class="mb-6">
-        <h4 class="mb-2 text-2xl font-black uppercase text-sky-500">Choice of Meat</h4>
-        <ul class="grid grid-cols-3 gap-x-6 text-lg font-semibold">
-          <li>• Turkey</li><li>• Egg Salad</li><li>• Fried Chicken Cutlet</li>
-          <li>• Philly Steak</li><li>• Tuna Salad</li><li>• Chicken Parm Cutlet</li>
-          <li>• Chicken Salad</li><li>• Bacon</li><li>• Pastrami</li>
-          <li>• Grilled Chicken Breast</li><li></li><li>• Sliced Corn Beef</li>
-        </ul>
-        <p class="mt-2 font-black">Extra Meat $2.99 each</p>
-      </div>
-
-      <div class="mb-6">
-        <h4 class="mb-2 text-2xl font-black uppercase text-sky-500">Choice of Cheese</h4>
-        <ul class="grid grid-cols-3 gap-x-6 text-lg font-semibold">
-          <li>• American</li><li>• Mozzarella</li><li>• Munster</li>
-          <li>• Swiss</li><li>• Provolone</li><li>• Shredded Cheese</li>
-          <li>• Pepperjack</li><li>• Cheddar</li>
-        </ul>
-      </div>
-
-      <div class="mb-6">
-        <h4 class="mb-2 text-2xl font-black uppercase text-sky-500">Choice of Toppings</h4>
-        <ul class="grid grid-cols-3 gap-x-6 text-lg font-semibold">
-          <li>• Banana Peppers</li><li>• Tomato</li><li>• Roasted Red Peppers</li>
-          <li>• Mushrooms</li><li>• Onions</li><li>• Romain Lettuce</li>
-          <li>• Mixed Lettuce</li><li>• Guacamole</li><li>• Sliced Avocado</li>
-          <li>• Spinach</li><li>• Jalapeños</li><li>• Roasted Sweet Onions</li>
-          <li>• Pico de Gallo</li><li>• Pickles</li><li>• Roasted Green Peppers & Onions</li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="mb-2 text-2xl font-black uppercase text-sky-500">Dressing Options</h4>
-        <ul class="grid grid-cols-2 gap-x-6 text-lg font-semibold">
-          <li>• Ranch</li><li>• Chipotle</li>
-          <li>• Blue Cheese</li><li>• Pesto</li>
-          <li>• Mayo</li><li>• BBQ</li>
-          <li>• Deli Mustard</li><li>• Ketchup</li>
-          <li>• Honey Mustard</li><li>• Aioli</li>
-          <li>• Yellow Mustard</li><li>• Russian</li>
-          <li>• Marinara Sauce</li><li>• Spicy Mayo</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- MIDDLE COLUMN -->
-    <div class="space-y-6">
-      <article class="rounded-3xl border-2 border-sky-400 p-5">
-        <div class="mb-4 flex justify-between border-b-2 border-sky-400">
-          <h2 class="text-4xl font-black uppercase text-sky-500">Paninis</h2>
-          <p class="bg-sky-500 px-6 py-1 text-4xl font-black text-white">$11.99</p>
-        </div>
-
-        <div class="space-y-3">
-          <div><h3 class="text-xl font-black">Turkey Bacon Guacamole</h3><p class="font-semibold">Turkey, Bacon, Guacamole, Pepper Jack Cheese & Ranch</p></div>
-          <div><h3 class="text-xl font-black">Tuna Melt</h3><p class="font-semibold">Tuna Salad, Roasted Red Peppers & American Cheese</p></div>
-          <div><h3 class="text-xl font-black">Cabana</h3><p class="font-semibold">Turkey, Ham, Swiss, Pickles & Russian</p></div>
-          <div><h3 class="text-xl font-black">Veggie Melt</h3><p class="font-semibold">Roasted Peppers & Onions, Cilantro, Jalapeño, Spinach, Broccoli, Pepper Jack Cheese & Chipotle Sauce</p></div>
-          <div><h3 class="text-xl font-black">Buffalo Chicken</h3><p class="font-semibold">Grilled Chicken, Bacon, Cheddar Cheese, Lettuce, Tomato & Ranch</p></div>
-          <div><h3 class="text-xl font-black">Spicy Pepperoni</h3><p class="font-semibold">Pepperoni, Pepper Jack Cheese, Pickles, Jalapeño & Chipotle Sauce</p></div>
-          <div><h3 class="text-xl font-black">Philly Cheese Steak</h3><p class="font-semibold">Sliced Steak, American Cheese, Roasted Peppers & Onions, Roasted Red Peppers & Mayo</p></div>
-        </div>
-      </article>
-
-      <article class="rounded-3xl border-2 border-sky-400 p-5">
-        <div class="mb-4 flex justify-between border-b-2 border-sky-400">
-          <h2 class="text-4xl font-black uppercase text-sky-500">Hot Sandwiches</h2>
-          <p class="bg-sky-500 px-6 py-1 text-4xl font-black text-white">$7.99</p>
-        </div>
-
-        <h3 class="mb-4 inline-block rounded-r-lg bg-sky-500 px-4 py-1 text-xl font-black text-white">
-          Chicken Sandwiches
-        </h3>
-
-        <div class="space-y-3">
-          <div><h3 class="text-xl font-black">Pico de Gallo Chicken</h3><p class="font-semibold">Grilled chicken, cheddar cheese, avocado, lettuce, tomato & mayo</p></div>
-          <div><h3 class="text-xl font-black">Chicken Milano</h3><p class="font-semibold">Grilled Chicken, mozzarella cheese & pesto mayo</p></div>
-          <div><h3 class="text-xl font-black">Chicken Parmesan</h3><p class="font-semibold">Parmesan chicken breast, mozzarella & marinara</p></div>
-          <div><h3 class="text-xl font-black">Grilled Chicken Sandwich</h3><p class="font-semibold">Grilled Chicken, Cheddar Cheese, Avocado, Lettuce & Pesto Mayo</p></div>
-          <div><h3 class="text-xl font-black">Crispy Chicken Sandwich</h3><p class="font-semibold">Crispy Chicken, Fresh Mozzarella & Pesto Mayo</p></div>
-          <div><h3 class="text-xl font-black">Chicken Tikka Masala Sandwich</h3><p class="font-semibold">Chicken tikka masala, shredded mozzarella cheese, lettuce, tomato & onion</p></div>
-          <div><h3 class="text-xl font-black">Chipotle Chicken</h3><p class="font-semibold">Fried chicken, chipotle sauce, pepperjack cheese, roasted peppers & onions</p></div>
-        </div>
-      </article>
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="space-y-6">
-      <article class="rounded-3xl border-2 border-sky-400 p-5">
-        <h2 class="mb-4 border-b-2 border-sky-400 text-4xl font-black uppercase text-sky-500">Subs</h2>
-
-        <div class="grid gap-5 sm:grid-cols-2">
-          <div class="rounded-xl border border-sky-300 p-4">
-            <h3 class="mb-3 rounded-r-lg bg-sky-500 px-3 py-1 text-xl font-black text-white">Sub Only — $10.99</h3>
-            <ul class="space-y-1 text-lg font-black">
-              <li>• BLT</li>
-              <li>• Grilled Chicken</li>
-              <li>• American Sub</li>
-            </ul>
-          </div>
-
-          <div class="rounded-xl border border-sky-300 p-4">
-            <h3 class="text-xl font-black">
-              <span class="text-sky-500">Meal</span> with Chips & Soda
-              <span class="ml-2 bg-sky-500 px-3 py-1 text-white">$14.99</span>
-            </h3>
-          </div>
-        </div>
-      </article>
-
-      <article class="rounded-3xl border-2 border-sky-400 p-5">
-        <div class="mb-4 flex items-end gap-4 border-b-2 border-sky-400">
-          <h2 class="text-4xl font-black uppercase text-sky-500">Tacos</h2>
-          <h3 class="pb-1 text-xl font-black">Chipotle Style Chicken Tacos</h3>
-        </div>
-
-        <h3 class="mb-4 inline-block rounded-r-lg bg-sky-500 px-4 py-1 text-xl font-black text-white">
-          3 Tacos — $11.99
-        </h3>
-
-        <h4 class="mb-2 text-2xl font-black uppercase text-sky-500">Toppings</h4>
-        <ul class="grid grid-cols-2 gap-x-8 text-lg font-semibold">
-          <li>• Lettuce</li><li>• Pickle</li>
-          <li>• Onions</li><li>• Jalapeño</li>
-          <li>• Cucumber</li><li>• Fresh Lime</li>
-          <li>• Tomatoes</li><li>• Guacamole</li>
-          <li>• Bell Peppers</li><li>• Sour-Cream</li>
-        </ul>
-      </article>
-
-      <article class="rounded-3xl border-2 border-sky-400 p-5">
-        <h2 class="mb-4 border-b-2 border-sky-400 text-4xl font-black uppercase text-sky-500">Gyro</h2>
-
-        <div class="mb-3 space-y-2 text-lg font-black">
-          <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500">
-            <span>Chicken Over Rice</span><span>$11.99</span>
-          </p>
-          <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500">
-            <span>Lamb Over Rice</span><span>$11.99</span>
-          </p>
-          <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500">
-            <span>Combo Mix Over Rice</span><span>$11.99</span>
-          </p>
-          <p class="flex justify-between gap-3 border-b border-dotted border-zinc-500">
-            <span>Chicken/Lamb Gyro</span><span>$11.99</span>
-          </p>
-        </div>
-
-        <p class="font-bold">Wrapped in Pita Bread</p>
-        <p class="mb-5 font-black">Extra Meat $2.99 | Pita $0.99</p>
-
-        <div class="grid gap-6 sm:grid-cols-2">
-          <div>
-            <h4 class="mb-2 text-2xl font-black uppercase text-sky-500">Salads Included</h4>
-            <ul class="grid grid-cols-2 gap-x-5 font-semibold">
-              <li>• Lettuce</li><li>• Pickle</li>
-              <li>• Tomato</li><li>• Jalapeño</li>
-              <li>• Onion</li><li>• Guacamole</li>
-              <li>• Cucumber</li><li>• Bell Peppers</li>
-              <li>• Cilantro Mix</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 class="mb-2 text-2xl font-black uppercase text-sky-500">
-              Sauces <span class="text-sm normal-case text-zinc-950">All sauces homemade</span>
-            </h4>
-            <ul class="space-y-1 font-semibold">
-              <li>• White Dill Sauce</li>
-              <li>• Buffalo Chipotle Mayo</li>
-              <li>• Mint & Cilantro Mix</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-    </div>
   </div>
 </section>

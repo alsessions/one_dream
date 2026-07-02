@@ -1,11 +1,11 @@
 {# Site Footer #}
 
-<footer class="bg-zinc-900 text-zinc-400 hc:bg-white hc:text-zinc-700 py-12 md:py-16">
-  <div class="container">
+<footer class="site-footer mt-auto w-full bg-zinc-900 text-zinc-400 py-12 md:py-16">
+  <div class="site-footer__inner w-full px-6 sm:px-8 lg:px-12">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
       {# Brand column #}
       <div class="md:col-span-1">
-        <a href="/" class="inline-flex items-center gap-2 text-xl font-bold text-white hc:text-zinc-900 no-underline hover:text-primary-400">
+        <a href="/" class="inline-flex items-center gap-2 text-xl font-bold text-white no-underline hover:text-primary-400">
           <img
             src="/assets/images/one_dream_logo.png"
             alt="{{ metadata.title | default("Electric Lime") }}"
@@ -22,13 +22,48 @@
           {{ metadata.description | default("") }}
         </p>
 
+        <ul class="mt-6 space-y-3 text-sm font-semibold">
+          <li class="flex items-center gap-3">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-primary-500 text-primary-400" aria-hidden="true">
+              {% phosphor "phone", "bold", { size: 18 } %}
+            </span>
+            <a href="tel:+13158658044" class="text-white no-underline hover:text-primary-400">
+              +1 315-865-8044
+            </a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-primary-500 text-primary-400" aria-hidden="true">
+              {% phosphor "clock", "bold", { size: 18 } %}
+            </span>
+            <span class="text-white">Open 24 Hours</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-primary-500 text-primary-400" aria-hidden="true">
+              {% phosphor "facebook-logo", "bold", { size: 18 } %}
+            </span>
+            <span class="text-white">One Dream Kitchen</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-primary-500 text-primary-400" aria-hidden="true">
+              {% phosphor "instagram-logo", "bold", { size: 18 } %}
+            </span>
+            <span class="text-white">@onedreamofstittville</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-primary-500 text-primary-400" aria-hidden="true">
+              {% phosphor "map-pin", "bold", { size: 18 } %}
+            </span>
+            <span class="text-white">9060 NY-365, Stittville, NY 13469</span>
+          </li>
+        </ul>
+
         {# Social links #}
         {% if socials %}
           <div class="flex gap-4 mt-6">
             {% for social in socials %}
               <a
                 href="{{ social.url }}"
-                class="text-zinc-400 hc:text-zinc-700 hover:text-white hc:hover:text-primary-700 transition-colors"
+                class="text-zinc-400 hover:text-white transition-colors"
                 aria-label="{{ social.label }}"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -53,7 +88,7 @@
       {# Navigation columns #}
       {% for column in footer.columns %}
         <div class="md:col-span-1">
-          <h3 class="text-sm font-semibold text-white hc:text-zinc-900 uppercase tracking-wider mb-4">
+          <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">
             {{ column.title }}
           </h3>
           <ul class="space-y-3 md:flex md:flex-wrap md:gap-x-6 md:gap-y-2 md:space-y-0">
@@ -61,7 +96,7 @@
               <li>
                 <a
                   href="{{ link.url }}"
-                  class="text-sm text-zinc-400 hc:text-zinc-700 hover:text-white hc:hover:text-primary-700 transition-colors no-underline hc:underline"
+                  class="text-sm text-zinc-400 hover:text-white transition-colors no-underline"
                   {% if link.external %}target="_blank" rel="noopener noreferrer"{% endif %}
                 >
                   {{ link.label }}
@@ -74,7 +109,7 @@
     </div>
 
     {# Bottom bar #}
-    <div class="mt-12 pt-8 border-t border-zinc-800 hc:border-zinc-300">
+    <div class="mt-12 pt-8 border-t border-zinc-800">
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
         <p class="text-sm">
           &copy; {% year %} {{ metadata.title | default("Electric Lime") }}. All rights reserved.
@@ -85,18 +120,13 @@
             {% for link in footer.legal %}
               <a
                 href="{{ link.url }}"
-                class="text-sm text-zinc-400 hc:text-zinc-700 hover:text-white hc:hover:text-primary-700 transition-colors no-underline hc:underline"
+                class="text-sm text-zinc-400 hover:text-white transition-colors no-underline"
               >
                 {{ link.label }}
               </a>
             {% endfor %}
           </div>
         {% endif %}
-      </div>
-
-      {# High Contrast Toggle #}
-      <div class="mt-6 flex justify-center sm:justify-start">
-        <contrast-toggle></contrast-toggle>
       </div>
     </div>
   </div>

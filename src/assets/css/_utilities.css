@@ -41,7 +41,6 @@
   @apply bg-white rounded-2xl shadow-sm;
   @apply border border-zinc-200;
   @apply p-6;
-  @apply hc:border-zinc-400;
 }
 
 @utility card-hover {
@@ -57,27 +56,22 @@
 
 @utility badge--primary {
   @apply bg-primary-100 text-primary-800;
-  @apply hc:bg-white hc:text-primary-950 hc:ring-1 hc:ring-primary-800;
 }
 
 @utility badge--secondary {
   @apply bg-zinc-100 text-zinc-800;
-  @apply hc:bg-white hc:text-zinc-900 hc:ring-1 hc:ring-zinc-500;
 }
 
 @utility badge--success {
   @apply bg-green-100 text-green-800;
-  @apply hc:bg-white hc:text-green-950 hc:ring-1 hc:ring-green-800;
 }
 
 @utility badge--warning {
   @apply bg-amber-100 text-amber-800;
-  @apply hc:bg-white hc:text-amber-950 hc:ring-1 hc:ring-amber-800;
 }
 
 @utility badge--error {
   @apply bg-red-100 text-red-800;
-  @apply hc:bg-white hc:text-red-950 hc:ring-1 hc:ring-red-800;
 }
 
 /* Alert component */
@@ -87,22 +81,18 @@
 
 @utility alert--info {
   @apply bg-blue-50 border-blue-500 text-blue-800;
-  @apply hc:bg-blue-100 hc:text-blue-900;
 }
 
 @utility alert--success {
   @apply bg-green-50 border-green-500 text-green-800;
-  @apply hc:bg-green-100 hc:text-green-900;
 }
 
 @utility alert--warning {
   @apply bg-amber-50 border-amber-500 text-amber-800;
-  @apply hc:bg-amber-100 hc:text-amber-900;
 }
 
 @utility alert--error {
   @apply bg-red-50 border-red-500 text-red-800;
-  @apply hc:bg-red-100 hc:text-red-900;
 }
 
 /* Aspect ratios */
@@ -126,7 +116,6 @@
 /* Divider */
 @utility divider {
   @apply border-t border-zinc-200 my-8;
-  @apply hc:border-zinc-400;
 }
 
 /* Visually hidden (for screen readers) */
