@@ -247,9 +247,9 @@ templateEngineOverride: njk
     <article id="crispy-fish-specials" class="{{ menuCard }}">
       <h2 class="{{ title }} border-b-2 border-[#c98532] pb-3">Crispy Fish Specials</h2>
       <div class="mt-4 space-y-3">
-        <p class="{{ line }}"><span class="{{ lineLabel }}">Crispy Fish & Chips</span><span class="{{ linePrice }}">$11.99</span></p>
-        <p class="{{ line }}"><span class="{{ lineLabel }}">Crispy Fish Sandwich</span><span class="{{ linePrice }}">$11.99</span></p>
-        <p class="{{ line }}"><span class="{{ lineLabel }}">Crispy Fish Quesadilla</span><span class="{{ linePrice }}">$11.99</span></p>
+        <p class="{{ line }}"><span class="{{ lineLabel }}">Crispy Fish & Chips</span><span class="{{ linePrice }}">$12.99</span></p>
+        <p class="{{ line }}"><span class="{{ lineLabel }}">Crispy Fish Sandwich</span><span class="{{ linePrice }}">$12.99</span></p>
+        <p class="{{ line }}"><span class="{{ lineLabel }}">Crispy Fish Quesadilla</span><span class="{{ linePrice }}">$12.99</span></p>
       </div>
     </article>
 
